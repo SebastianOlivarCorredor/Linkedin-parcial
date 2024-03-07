@@ -1,0 +1,593 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    background: #e9e7e7;
+    color: #5a5a5a;
+}
+a {
+    text-decoration: none;
+    color: #5a5a5a;
+
+}
+/* Estilos de la barra de navegación */
+.navbar{
+    display: flex; /* Hace que los elementos se muestren en línea */
+    align-items: center; /* Alinea los elementos verticalmente */
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    background: #fff; /* Color de fondo */
+    padding: 6px 6%; /* Espaciado interno */
+    position: sticky; /* Fija la barra de navegación en la parte superior */
+    top: 0; /* Distancia desde la parte superior */
+    z-index: 100; /* Capa z para superponer */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1); /* Sombra */
+}
+/* Estilos para el logo en la barra de navegación */
+.logo img {
+    width: 30px; /* Ancho de la imagen */
+    margin-right: 15px; /* Margen derecho */
+    display: block; /* Muestra el elemento como bloque */
+}
+/* Estilos para el centro de la barra de navegación */
+.navbar-center {
+    display: flex; /* Hace que los elementos se muestren en línea */
+}
+
+
+/* Estilos para los elementos del centro de la barra de navegación */
+.navbar-center a {
+    text-align: center; /* Alinea el texto en el centro */
+    margin: 0 10px; /* Margen entre cada elemento */
+}
+
+
+/* Estilos para las imágenes en el centro de la barra de navegación */
+.navbar-center img {
+    display: block; /* Muestra la imagen como bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+/* Estilos para los textos en el centro de la barra de navegación */
+.navbar-center span {
+    display: block; /* Muestra el texto en una línea separada */
+    font-size: 12px; /* Tamaño de fuente */
+    margin-top: 5px; /* Margen superior */
+}
+
+
+/* Estilos para los elementos de la barra de navegación centrados */
+.navbar-center ul li {
+    display: inline-block; /* Hace que los elementos de la lista se muestren en línea */
+    list-style: none; /* Elimina los estilos de viñetas de la lista */
+}
+/* Estilos para los enlaces dentro de los elementos de la barra de navegación centrados */
+.navbar-center ul li a{
+    display: flex; /* Establece el contenedor en línea como un contenedor flexible */
+    list-style: center; /* No parece tener efecto ya que no es una propiedad válida */
+    font-size: 14px; /* Establece el tamaño de fuente */
+    margin: 5px 8px; /* Establece los márgenes superior e inferior en 5px y los márgenes izquierdo y derecho en 8px */
+    padding-right: 5px; /* Establece el relleno a la derecha en 5px */
+    position: relative; /* Establece la posición relativa para permitir el posicionamiento absoluto de otros elementos hijos */
+}
+
+/* Estilos para las imágenes dentro de los enlaces */
+.navbar-center ul li a img{
+    width: 30px; /* Establece el ancho de las imágenes en 30px */
+}
+
+/* Estilos para el pseudoelemento ::after de los enlaces */
+.navbar-center ul li a::after{
+    content: ''; /* No se muestra contenido */
+    width: 100%; /* Establece el ancho en 100% */
+    height: 2px; /* Establece la altura en 2px */
+    background: #045be6; /* Establece el color de fondo */
+    position:absolute; /* Establece la posición absoluta con respecto al elemento padre */
+    bottom: -15px; /* Coloca el pseudoelemento 15px arriba del borde inferior del enlace */
+    transition: width 0.3s; /* Aplica una transición de 0.3 segundos a la propiedad width */
+}
+
+/* Estilos para el pseudoelemento ::after de los enlaces cuando se realiza el hover o está activo */
+.navbar-center ul li a:hover::after,
+.navbar-center ul li a.active-link::after
+{
+    width: 100%; /* Establece el ancho en 100% */
+}
+
+/* Estilos para la imagen de perfil en la barra de navegación */
+.nav-profile-img{
+    width: 40px; /* Establece el ancho de la imagen en 40px */
+    border-radius: 50%; /* Establece el radio de borde para que la imagen sea circular */
+    display:block; /* Hace que el elemento sea un bloque */
+    cursor: pointer; /* Cambia el cursor al puntero cuando se pasa sobre la imagen */
+    position: relative; /* Establece la posición relativa para permitir el posicionamiento absoluto de otros elementos hijos */
+}
+
+/* Estilos para el indicador de conexión en línea */
+.online{
+    position: relative; /* Establece la posición relativa para permitir el posicionamiento absoluto de otros elementos hijos */
+}
+/* Estilos para el punto de conexión en línea */
+.online::after{
+    content: ''; /* No se muestra contenido */
+    width: 7px; /* Establece el ancho en 7px */
+    height: 7px; /* Establece la altura en 7px */
+    border: 2px solid #fff; /* Establece un borde sólido de 2px en blanco */
+    border-radius: 50%; /* Establece el radio de borde para que el punto sea circular */
+    right: 0px; /* Coloca el punto 0px desde el borde derecho */
+    top: 0px; /* Coloca el punto 0px desde el borde superior */
+    background: #41db51; /* Establece el color de fondo */
+    position: absolute; /* Establece la posición absoluta con respecto al elemento padre */
+}
+/* Estilos para la caja de búsqueda */
+.search-box{
+    background: #f0f2f5; /* Establece el color de fondo */
+    width: 250px; /* Establece el ancho */
+    border-radius: 20px; /* Establece el radio de borde */
+    display: flex; /* Hace que los elementos se muestren en línea como un contenedor flexible */
+    align-items: center; /* Alinea verticalmente los elementos */
+    padding: 0 15px; /* Establece el relleno */
+}
+/* Estilos para el contenedor de navegación izquierda */
+.navbar-left{
+    display: flex; /* Hace que los elementos se muestren en línea */
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+/* Estilos para la imagen dentro de la caja de búsqueda */
+.search-box img{
+    width: 14px; /* Establece el ancho de la imagen */
+}
+/* Estilos para el campo de entrada dentro de la caja de búsqueda */
+.search-box input {
+    width: 100%; /* Establece el ancho al 100% */
+    background: transparent; /* Establece el fondo transparente */
+    padding: 8px; /* Establece el relleno */
+    outline: none; /* Elimina el contorno de enfoque */
+    border: 0; /* Elimina el borde */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    padding: 20px 6%; /* Establece el relleno */
+    display: flex; /* Hace que los elementos se muestren en línea */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan cuando no haya suficiente espacio */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+}
+
+
+
+/* Estilos para la barra lateral izquierda */
+.left-sidebar {
+    flex-basis: 25%; /* Establece el tamaño base */
+    align-self: flex-start; /* Alinea el elemento al principio del contenedor principal */
+    position: sticky; /* Establece la posición pegajosa */
+    top: 73px; /* Establece la distancia desde la parte superior */
+}
+
+/* Estilos para el contenedor de perfil en la barra lateral */
+.sidebar-profile-box{
+    background: #fff; /* Establece el color de fondo */
+}
+/* Estilos para la información del perfil en la barra lateral */
+.sidebar-profile-info{
+    padding: 0 25px; /* Establece el relleno */
+}
+
+/* Estilos para la imagen de perfil en la barra lateral */
+.sidebar-profile-info img {
+    width: 90px; /* Establece el ancho de la imagen */
+    border-radius: 50%; /* Establece el radio de borde para que la imagen sea circular */
+    background: #fff; /* Establece el color de fondo */
+    padding: 4px; /* Establece el relleno */
+    margin-top: -45px; /* Desplaza la imagen hacia arriba */
+}
+
+/* Estilos para el título del perfil en la barra lateral */
+.sidebar-profile-info h1 {
+    font-size: 20px; /* Establece el tamaño de fuente */
+    font-weight: 600; /* Establece el grosor de fuente */
+    color: #222; /* Establece el color de texto */
+}
+/* Estilos para el subtítulo del perfil en la barra lateral */
+.sidebar-profile-info h3 {
+    font-size: 14px; /* Establece el tamaño de fuente */
+    font-weight: 500; /* Establece el grosor de fuente */
+    color: #777; /* Establece el color de texto */
+}
+
+/* Estilos para la lista de información del perfil en la barra lateral */
+.sidebar-profile-info ul {
+    list-style: none; /* Elimina los estilos de viñetas */
+    margin: 20px 0; /* Establece el margen */
+}
+
+/* Estilos para los elementos de la lista de información del perfil en la barra lateral */
+.sidebar-profile-info ul li{
+    width: 100%; /* Establece el ancho al 100% */
+    margin: 5px 0; /* Establece el margen */
+    font-size: 13px; /* Establece el tamaño de fuente */
+}
+/* Estilos para los elementos de la lista de información del perfil en la barra lateral */
+.sidebar-profile-info ul li span{
+    float: right; /* Alinea los elementos a la derecha */
+    color: #045be6; /* Establece el color de texto */
+}
+
+/* Estilos para los enlaces de perfil en la barra lateral */
+.sidebar-profile-link{
+    display: flex; /* Hace que los elementos se muestren en línea */
+    align-items: center; /* Alinea verticalmente los elementos */
+    border-top: 1px solid #ccc; /* Establece el borde superior */
+}
+
+/* Estilos para los enlaces de perfil en la barra lateral */
+.sidebar-profile-link a{
+    flex-basis: 50%; /* Establece el tamaño base */
+    display: flex; /* Hace que los elementos se muestren en línea */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    padding: 15px 0; /* Establece el relleno */
+    font-size: 13px; /* Establece el tamaño de fuente */
+    border-left: 1px solid #ccc; /* Establece el borde izquierdo */
+}
+/* Estilos para el primer enlace de perfil en la barra lateral */
+.sidebar-profile-link a:first-child {
+    border-left: 0; /* Elimina el borde izquierdo */
+}
+
+/* Estilos para la imagen dentro de los enlaces de perfil en la barra lateral */
+.sidebar-profile-link a img {
+    width: 20px; /* Establece el ancho de la imagen */
+    margin-right: 10px; /* Establece el margen derecho */
+}
+
+/* Estilos para la actividad en la barra lateral */
+.sidebar-activity{
+    background: #fff; /* Establece el color de fondo */
+    padding: 5px 25px; /* Establece el relleno */
+    margin: 12px 0; /* Establece el margen */
+}
+
+/* Estilos para el título de la actividad en la barra lateral */
+.sidebar-activity h3{
+    color: #0051ff; /* Establece el color de texto */
+    font-size: 14px; /* Establece el tamaño de fuente */
+    font-weight: 500; /* Establece el grosor de fuente */
+    margin: 20px 0 10px; /* Establece el margen */
+}
+/* Estilos para el enlace "Descubre más" en la barra lateral */
+.discover-more-link{
+    border-top: 1px solid #ccc; /* Establece el borde superior */
+    text-align: center; /* Alinea el texto al centro */
+    margin-top: 20px; /* Establece el margen superior */
+    margin-left: -25px; /* Establece el margen izquierdo */
+    margin-right: -25px; /* Establece el margen derecho */
+}
+
+
+
+
+/* Estilos para la barra lateral derecha */
+.right-sidebar {
+    flex-basis: 25%; /* Establece el tamaño base */
+    align-self: flex-start; /* Alinea el elemento al principio del contenedor principal */
+    position: sticky; /* Establece la posición pegajosa */
+    top: 73px; /* Establece la distancia desde la parte superior */
+}
+
+/* Estilos para el contenedor de noticias en la barra lateral */
+.sidebar-news{
+    background: #fff; /* Establece el color de fondo */
+    padding: 10px 25px; /* Establece el relleno */
+}
+
+/* Estilos para el icono de información en la barra lateral */
+.info-icon{
+    width: 15px; /* Establece el ancho */
+    float: right; /* Alinea el elemento a la derecha */
+    margin-top:15px; /* Establece el margen superior */
+}
+/* Estilos para los enlaces de noticias en la barra lateral */
+.sidebar-news a{
+    display: block; /* Hace que el elemento sea un bloque */
+    font-size: 12px; /* Establece el tamaño de fuente */
+    font-weight: 600; /* Establece el grosor de fuente */
+    margin-top: 10px; /* Establece el margen superior */
+    margin-bottom: -5px; /* Establece el margen inferior */
+}
+
+/* Estilos para el texto dentro de las noticias en la barra lateral */
+.sidebar-news span{
+    font-size: 12px; /* Establece el tamaño de fuente */
+}
+
+/* Estilos para el enlace "Leer más" en la barra lateral */
+.sidebar-news .read-more-link{
+    color: #045be0; /* Establece el color de texto */
+    font-weight: 500; /* Establece el grosor de fuente */
+    margin: 20px 0 10px; /* Establece el margen */
+}
+
+/* Estilos para el contenedor de anuncio en la barra lateral */
+.sidebar-ad{
+    background: #fff; /* Establece el color de fondo */
+    padding: 15px 25px; /* Establece el relleno */
+    text-align: center; /* Alinea el texto al centro */
+    margin: 12px 0; /* Establece el margen */
+    font-size: 12px; /* Establece el tamaño de fuente */
+}
+/* Estilos para la imagen dentro del anuncio en la barra lateral */
+.sidebar-ad img{
+    width: 60px; /* Establece el ancho de la imagen */
+    border-radius: 50%; /* Establece el radio de borde para que la imagen sea circular */
+    margin: 4px; /* Establece el margen */
+}
+
+/* Estilos para el texto pequeño dentro del anuncio en la barra lateral */
+.sidebar-ad small{
+    float: right; /* Alinea el texto a la derecha */
+    font-weight: 500; /* Establece el grosor de fuente */
+}
+
+/* Estilos para el párrafo dentro del anuncio en la barra lateral */
+.sidebar-ad p{
+    margin-top: 30px; /* Establece el margen superior */
+    margin-bottom: 10px; /* Establece el margen inferior */
+}
+
+/* Estilos para el texto en negrita dentro del anuncio en la barra lateral */
+.sidebar-ad b{
+    display: block; /* Hace que el texto sea un bloque */
+    font-weight: 500; /* Establece el grosor de fuente */
+    margin-top: 10px; /* Establece el margen superior */
+}
+
+/* Estilos para el enlace de publicidad en la barra lateral */
+.ad-link{
+    display: inline-block; /* Hace que el elemento sea un bloque en línea */
+    border: 1px solid #045be6; /* Establece el borde */
+    border-radius: 30px; /* Establece el radio de borde */
+    padding: 5px 15px; /* Establece el relleno */
+    color: #045be6; /* Establece el color de texto */
+    font-weight: 500; /* Establece el grosor de fuente */
+    margin: 20px auto 10px; /* Establece el margen */
+}
+
+/* Estilos para los enlaces útiles en la barra lateral */
+.sidebar-useful-links{
+    padding: 15px 25px; /* Establece el relleno */
+    text-align: center; /* Alinea el texto al centro */
+}
+/* Estilos para los enlaces dentro de los enlaces útiles en la barra lateral */
+.sidebar-useful-links a{
+    display: inline-block; /* Hace que el elemento sea un bloque en línea */
+    font-size: 14px; /* Establece el tamaño de fuente */
+    margin: 4px 20px; /* Establece el margen */
+}
+
+/* Estilos para el mensaje de derechos de autor */
+.copyright-message{
+    display: flex; /* Hace que los elementos se muestren en línea */
+    align-items: center; /* Alinea verticalmente los elementos */
+    font-size: 12px; /* Establece el tamaño de fuente */
+    margin-top: 10px; /* Establece el margen superior */
+    font-weight: 500; /* Establece el grosor de fuente */
+}
+
+/* Estilos para la imagen dentro del mensaje de derechos de autor */
+.copyright-message img{
+    width: 18px; /* Establece el ancho de la imagen */
+    margin-right: 4px; /* Establece el margen derecho */
+}
+
+
+
+/* Estilos para el contenido principal */
+.main-content{
+    flex-basis: 47%; /* Establece el tamaño base */
+}
+
+/* Estilos para la sección de crear publicación */
+.create-post{
+    background: #fff; /* Establece el color de fondo */
+}
+
+/* Estilos para el área de entrada de la publicación */
+.create-post-input{
+    padding: 20px 25px 10px; /* Establece el relleno */
+    display: flex; /* Hace que los elementos se muestren en línea */
+    align-items: flex-start; /* Alinea verticalmente los elementos */
+}
+
+/* Estilos para la imagen dentro del área de entrada de la publicación */
+.create-post-input img{
+    width: 35px; /* Establece el ancho de la imagen */
+    border-radius: 50%; /* Establece el radio de borde para que la imagen sea circular */
+    margin-right: 10px; /* Establece el margen derecho */
+}
+
+/* Estilos para el área de texto dentro del área de entrada de la publicación */
+.create-post-input textarea{
+    width: 100%; /* Establece el ancho al 100% */
+    border: 0; /* Elimina el borde */
+    outline: 0; /* Elimina el contorno de enfoque */
+    resize: none; /* Evita que el usuario pueda redimensionar el área de texto */
+    background: transparent; /* Establece el fondo transparente */
+    margin-top: 8px; /* Establece el margen superior */
+}
+
+/* Estilos para el marcador de posición del área de texto */
+::placeholder{
+    font-weight: 500; /* Establece el grosor de fuente */
+}
+/* Estilos para los enlaces dentro del área de publicación */
+.create-post-links{
+    display: flex; /* Hace que los elementos se muestren en línea */
+    align-items: flex-start; /* Alinea verticalmente los elementos */
+}
+
+/* Estilos para los elementos de la lista dentro del área de publicación */
+.create-post-links li{
+    list-style: none; /* Elimina los estilos de viñetas */
+    border-top: 1px solid #ccc; /* Establece el borde superior */
+    border-right: 1px solid #ccc; /* Establece el borde derecho */
+    flex-basis: 25%; /* Establece el tamaño base */
+    height: 40px; /* Establece la altura */
+    font-size: 13px; /* Establece el tamaño de fuente */
+    display: flex; /* Hace que los elementos se muestren en línea */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    cursor: pointer; /* Cambia el cursor al puntero */
+}
+/* Estilos para las imágenes dentro de los elementos de la lista en la sección de crear publicación */
+.create-post-links li img{
+    width: 15px; /* Establece el ancho de la imagen */
+    margin-right: 5px; /* Establece el margen derecho */
+}
+/* Estilos para el último elemento de la lista en la sección de crear publicación */
+.create-post-links li:last-child{
+    background: #045be6; /* Establece el color de fondo */
+    color: #fff; /* Establece el color de texto */
+    border: top 0; /* Elimina el borde superior */
+    border-right: 0; /* Elimina el borde derecho */
+}
+/* Estilos para la sección de ordenar por */
+.sort-by{
+    display: flex; /* Hace que los elementos se muestren en línea */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin: 10px 0; /* Establece el margen */
+}
+
+/* Estilos para la línea divisoria en la sección de ordenar por */
+.sort-by hr{
+    flex: 1; /* Establece el factor de flexibilidad */
+    border: 0; /* Elimina el borde */
+    height: 1px; /* Establece la altura */
+    background: #ccc; /* Establece el color de fondo */
+}
+/* Estilos para el texto en la sección de ordenar por */
+.sort-by p{
+    font-size: 13px; /* Establece el tamaño de fuente */
+    padding-left: 5px; /* Establece el relleno izquierdo */
+}
+
+/* Estilos para el texto en negrita en la sección de ordenar por */
+.sort-by p span{
+    font-weight: 600; /* Establece el grosor de fuente */
+    cursor: pointer; /* Cambia el cursor al puntero */
+}
+
+/* Estilos para la imagen dentro del texto en negrita en la sección de ordenar por */
+.sort-by p span img{
+    width: 12px; /* Establece el ancho de la imagen */
+    margin-left: 3px; /* Establece el margen izquierdo */
+}
+
+/* Estilos para las publicaciones */
+.post {
+    background: #fff; /* Establece el color de fondo */
+    padding: 20px 25px 5px; /* Establece el relleno */
+    margin: 5px 0 15px; /* Establece el margen */
+    max-width: 100%; /* Establece el ancho máximo */
+}
+
+/* Estilos para la información del autor de la publicación */
+.post-author{
+    display: flex; /* Hace que los elementos se muestren en línea */
+    align-items: flex-start; /* Alinea verticalmente los elementos */
+    margin-bottom: 10px; /* Establece el margen inferior */
+    margin-right: 10px; /* Establece el margen derecho */
+}
+/* Estilos para la imagen del autor de la publicación */
+.post-author img{
+    width: 35px; /* Establece el ancho de la imagen */
+    border-radius: 50%; /* Establece el radio de borde para que la imagen sea circular */
+    margin-right: 10px; /* Establece el margen derecho */
+    margin-top: 5px; /* Establece el margen superior */
+}
+/* Estilos para el título del autor de la publicación */
+.post-author h1{
+    font-size: 18px; /* Establece el tamaño de fuente */
+    font-weight: 600; /* Establece el grosor de fuente */
+    color: #333; /* Establece el color de texto */
+}
+/* Estilos para el subtítulo del autor de la publicación */
+.post-author small{
+    display: block; /* Hace que el elemento sea un bloque */
+    margin-bottom: -2px; /* Establece el margen inferior */
+}
+/* Estilos para el contenido de la publicación */
+.post p {
+    font-size: 14px; /* Establece el tamaño de fuente */
+    margin-bottom: 15px; /* Establece el margen inferior */
+    word-wrap: break-word; /* Permite que el texto se rompa y se envuelva dentro del contenedor */
+    overflow-wrap: break-word; /* Otra propiedad para garantizar envolver el texto */
+}
+
+/* Estilos para las estadísticas de la publicación */
+.post-stats{
+    display: flex; /* Hace que los elementos se muestren en línea */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    font-size: 12px; /* Establece el tamaño de fuente */
+    border-bottom: 1px solid #ccc; /* Establece el borde inferior */
+    padding-bottom: 6px; /* Establece el relleno inferior */
+}
+/* Estilos para los contenedores de las estadísticas de la publicación */
+.post-stats div{
+    display:flex; /* Hace que los elementos se muestren en línea */
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+/* Estilos para las imágenes dentro de las estadísticas de la publicación */
+.post-stats img{
+    width: 15px; /* Establece el ancho de la imagen */
+    margin-right: -5px; /* Establece el margen derecho */
+}
+
+/* Estilos para los usuarios a los que les gusta la publicación */
+.liked-users{
+    margin-left:10px; /* Establece el margen izquierdo */
+}
+/* Estilos para la actividad de la publicación */
+.post-activity{
+    display: flex; /* Hace que los elementos se muestren en línea */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    padding: 10px 0; /* Establece el relleno */
+    font-size: 14px; /* Establece el tamaño de fuente */
+    font-weight: 500; /* Establece el grosor de fuente */
+}
+
+/* Estilos para los contenedores de la actividad de la publicación */
+.post-activity div{
+    display: flex; /* Hace que los elementos se muestren en línea */
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+/* Estilos para el icono de usuario en la actividad de la publicación */
+.post-activity-user-icon{
+    width: 22px; /* Establece el ancho */
+    border-radius: 50%; /* Establece el radio de borde para que el icono sea circular */
+}
+/* Estilos para el icono de flecha en la actividad de la publicación */
+.post-activity-arrow-icon{
+    width: 12px; /* Establece el ancho */
+    margin-left: 5px; /* Establece el margen izquierdo */
+}
+
+/* Estilos para las imágenes dentro de los enlaces de la actividad de la publicación */
+.post-activity-link img{
+    width: 18px; /* Establece el ancho de la imagen */
+    margin-right: 8px; /* Establece el margen derecho */
+}
+
+
+
+
+
+
